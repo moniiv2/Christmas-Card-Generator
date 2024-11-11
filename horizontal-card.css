@@ -1,0 +1,17 @@
+.horizontal-card {
+  border: solid 1px black;
+  border-radius: 2rem;
+  height: 250px;
+  width: 700px;
+}
+.card-container2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 1.3rem;
+  
+}
+.card-image2 img{
+  height: 250px;
+  width: 250px;
+  border-radius: 2rem 0 0 2rem;
+}
