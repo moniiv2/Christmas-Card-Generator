@@ -19,3 +19,12 @@
 .phase1 {
   display: none;
 }
+
+.message {
+  height: 50px;
+  width: 200px;
+}
+
+button {
+  cursor: pointer;
+}
