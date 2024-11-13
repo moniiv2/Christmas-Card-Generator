@@ -1,7 +1,3 @@
-// function display() {
-//   document.querySelector('.phase1').classList.remove('phase1')
-//
-
 import { cardDesigns } from "./card-designs.js"
 
 document.querySelector('.js-phase1').classList.remove('phase1')
@@ -34,7 +30,6 @@ document.querySelector('.phase2-btn').addEventListener('click', () => {
 })
 
 document.querySelector('.phase-3a-btn').addEventListener('click', () => {
-  displayFlipCard()
   document.querySelector('.js-phase3').classList.add('phase1')
   document.querySelector('.js-phase4').classList.remove('phase1')
 })
@@ -42,27 +37,31 @@ document.querySelector('.phase-3b-btn').addEventListener('click', () => {
 
 })
 
+function generateImage() {
 let randomImage = ''
-  let randomNumber = Math.round(Math.random())
-  if (randomNumber >= 0 && randomNumber < 1/10 ) {
+  let randomNumber = Math.random()
+  if (randomNumber >= 0 && randomNumber < 1/6 ) {
     randomImage = cardDesigns[0]
   } else
-  if (randomNumber >= 1/10 && randomNumber < 2/10 ) {
+  if (randomNumber >= 1/6 && randomNumber < 2/6 ) {
     randomImage = cardDesigns[1]
   } else
-  if (randomNumber >= 2/10 && randomNumber < 3/10 ) {
+  if (randomNumber >= 2/6 && randomNumber < 3/6 ) {
     randomImage = cardDesigns[2]
   } else
-  if (randomNumber >= 3/10 && randomNumber < 4/10 ) {
+  if (randomNumber >= 3/6 && randomNumber < 4/6 ) {
     randomImage = cardDesigns[3]
   } else
-  if (randomNumber >= 4/10 && randomNumber < 5/10 ) {
+  if (randomNumber >= 4/6 && randomNumber < 5/6 ) {
     randomImage = cardDesigns[4]
   } else
-  if (randomNumber >= 5/10 && randomNumber < 6/10 ) {
+  if (randomNumber >= 5/6 && randomNumber < 6/6 ) {
     randomImage = cardDesigns[5]
-  } else randomImage = 'CCG images/christmas elk.jpeg'
-
+  } 
+  //else randomImage = 'CCG images/christmas elk.jpeg'
+  //console.log(randomNumber)
+  return randomImage
+}
 
 let flipCardDisplay = ''
 let horizontalCardDisplay = ''
@@ -126,7 +125,7 @@ function displayFlipCard() {
       </style>
       <div class="card-container">
         <div class="card-container-inner">
-          <div class="front-card"><img src="${randomImage}" alt="HO! HO! HO!" class="card-image"></div>
+          <div class="front-card"><img src="${generateImage()}" alt="HO! HO! HO!" class="card-image"></div>
           <div class="back-card">
             <h4><b>Merry Christmas, ${receiversName}!</b></h4>
             <p>${message}</p>
@@ -135,12 +134,33 @@ function displayFlipCard() {
         </div>
     </div>
   `
+  return flipCardDisplay
 }
 
-document.querySelector('.phase4-btn').addEventListener('click', () => {
-  setTimeout(() => {
-    document.querySelector('.flip-card').innerHTML = flipCardDisplay
-    
-  }, 4000)
-  document.querySelector('.opening').innerHTML = "loading..."
+// async function timeOut () {
+//   await setTimeout(() => {
+//     document.querySelector('body').classList.remove('overlay')
+//     document.querySelector('.js-overlay').classList.remove('overlay-img')
+//     document.querySelector('.hidden-image').classList.add('hidden-image')
+//   }, 4000)
+//   document.querySelector('body').classList.add('overlay')
+//   document.querySelector('.js-overlay').classList.add('overlay')
+//   document.querySelector('.hidden-image').classList.remove('hidden-image')
+// }
+
+let generateButton = document.querySelector('.phase4-btn')
+generateButton.addEventListener('click', () => {
+  let section = document.querySelector('#section')
+  if (section) {
+  window.scrollTo({
+    top: section.offsetTop,
+    behavior: "smooth"
+  })
+  }
+  flipCardDisplay = ''
+  generateImage()
+  displayFlipCard()
+
+  document.querySelector('.flip-card').innerHTML = flipCardDisplay
+  generateButton.disabled = false
 })
