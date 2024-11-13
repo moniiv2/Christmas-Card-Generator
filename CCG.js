@@ -2,6 +2,8 @@
 //   document.querySelector('.phase1').classList.remove('phase1')
 //
 
+import { cardDesigns } from "./card-designs.js"
+
 document.querySelector('.js-phase1').classList.remove('phase1')
 document.querySelector('.phase1-btn').addEventListener('click', () => {
   document.querySelector('.js-phase1').classList.add('phase1')
@@ -19,8 +21,16 @@ document.querySelector('.phase2-btn').addEventListener('click', () => {
   message = document.querySelector('.js-input3').value
   console.log(ownersName)
   console.log(receiversName)
+  if(ownersName == '' || receiversName == '') {
+    alert("you have to add your name and receiver's name to proceed")
+  }
+  if(message == '') {
+    alert("please compose your message")
+  }
+  if (ownersName && receiversName && message !== '') {
   document.querySelector('.js-phase2').classList.add('phase1')
   document.querySelector('.js-phase3').classList.remove('phase1')
+  }
 })
 
 document.querySelector('.phase-3a-btn').addEventListener('click', () => {
@@ -31,6 +41,28 @@ document.querySelector('.phase-3a-btn').addEventListener('click', () => {
 document.querySelector('.phase-3b-btn').addEventListener('click', () => {
 
 })
+
+let randomImage = ''
+  let randomNumber = Math.round(Math.random())
+  if (randomNumber >= 0 && randomNumber < 1/10 ) {
+    randomImage = cardDesigns[0]
+  } else
+  if (randomNumber >= 1/10 && randomNumber < 2/10 ) {
+    randomImage = cardDesigns[1]
+  } else
+  if (randomNumber >= 2/10 && randomNumber < 3/10 ) {
+    randomImage = cardDesigns[2]
+  } else
+  if (randomNumber >= 3/10 && randomNumber < 4/10 ) {
+    randomImage = cardDesigns[3]
+  } else
+  if (randomNumber >= 4/10 && randomNumber < 5/10 ) {
+    randomImage = cardDesigns[4]
+  } else
+  if (randomNumber >= 5/10 && randomNumber < 6/10 ) {
+    randomImage = cardDesigns[5]
+  } else randomImage = 'CCG images/christmas elk.jpeg'
+
 
 let flipCardDisplay = ''
 let horizontalCardDisplay = ''
@@ -71,6 +103,10 @@ function displayFlipCard() {
   padding: 2px 16px;
   transform: rotateY(180deg);
 }
+  
+#back-card-p {
+  margin-left: 1.45rem;
+}
 
 .front-card {
   background-color: #bbb;
@@ -90,21 +126,21 @@ function displayFlipCard() {
       </style>
       <div class="card-container">
         <div class="card-container-inner">
-          <div class="front-card"><img src="CCG images/HoHoHo.jpeg" alt="HO! HO! HO!" class="card-image"></div>
+          <div class="front-card"><img src="${randomImage}" alt="HO! HO! HO!" class="card-image"></div>
           <div class="back-card">
-            <h4><b>${receiversName}</b></h4>
+            <h4><b>Merry Christmas, ${receiversName}!</b></h4>
             <p>${message}</p>
             <p style="margin-bottom: 8px;">Love, ${ownersName}</p>
           </div>
         </div>
     </div>
   `
-
-document.querySelector('.flip-card').innerHTML = flipCardDisplay
 }
 
-
-
 document.querySelector('.phase4-btn').addEventListener('click', () => {
-
+  setTimeout(() => {
+    document.querySelector('.flip-card').innerHTML = flipCardDisplay
+    
+  }, 4000)
+  document.querySelector('.opening').innerHTML = "loading..."
 })

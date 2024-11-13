@@ -30,9 +30,10 @@
 .back-card {
   padding: 2px 16px;
   transform: rotateY(180deg);
-  /* width: 200px;
-  word-wrap: wrap; */
-  color: red;
+}
+
+#back-card-p {
+  margin-left: 1.45rem;
 }
 
 .front-card {
