@@ -29,12 +29,16 @@ document.querySelector('.phase2-btn').addEventListener('click', () => {
   }
 })
 
+let chosenCard = ''
 document.querySelector('.phase-3a-btn').addEventListener('click', () => {
   document.querySelector('.js-phase3').classList.add('phase1')
   document.querySelector('.js-phase4').classList.remove('phase1')
+  chosenCard = 'flip-card'
 })
 document.querySelector('.phase-3b-btn').addEventListener('click', () => {
-
+  document.querySelector('.js-phase3').classList.add('phase1')
+  document.querySelector('.js-phase4').classList.remove('phase1')
+  chosenCard = 'horizontal-card'
 })
 
 function generateImage() {
@@ -137,6 +141,43 @@ function displayFlipCard() {
   return flipCardDisplay
 }
 
+function displayHorizontalCard () {
+  horizontalCardDisplay += `
+  <div class="horizontal-card">
+    <style>
+      .horizontal-card {
+  border: solid 1px black;
+  border-radius: 2rem;
+  height: 250px;
+  width: 700px;
+}
+.card-container2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 1.3rem;
+  
+}
+.card-image2 img{
+  height: 250px;
+  width: 250px;
+  border-radius: 2rem 0 0 2rem;
+}
+  </style>
+    <div class="card-container2">
+      <div class="card-image2">
+        <img src="${generateImage()}" alt="cute christmas elk">
+      </div>
+      <div class="card-details2">
+        <h4><b>Merry Christmas, ${receiversName}</b></h4>
+        <p>${message}</p>
+        <p style="margin-bottom: 8px;">Love, ${ownersName}</p>
+      </div>
+    </div>
+    </div>
+  `
+  return horizontalCardDisplay
+}
+
 // async function timeOut () {
 //   await setTimeout(() => {
 //     document.querySelector('body').classList.remove('overlay')
@@ -150,17 +191,33 @@ function displayFlipCard() {
 
 let generateButton = document.querySelector('.phase4-btn')
 generateButton.addEventListener('click', () => {
-  let section = document.querySelector('#section')
-  if (section) {
-  window.scrollTo({
-    top: section.offsetTop,
-    behavior: "smooth"
-  })
-  }
-  flipCardDisplay = ''
-  generateImage()
-  displayFlipCard()
+  if(chosenCard == 'flip-card') {
+    let section = document.querySelector('#section')
+    if (section) {
+    window.scrollTo({
+      top: section.offsetTop,
+      behavior: "smooth"
+    })
+    }
+    flipCardDisplay = ''
+    generateImage()
+    displayFlipCard()
 
-  document.querySelector('.flip-card').innerHTML = flipCardDisplay
-  generateButton.disabled = false
+    document.querySelector('.js-card-display-section').innerHTML = flipCardDisplay
+    generateButton.disabled = false
+  } else if (chosenCard == 'horizontal-card') {
+    let section = document.querySelector('#section')
+    if (section) {
+    window.scrollTo({
+      top: section.offsetTop,
+      behavior: "smooth"
+    })
+    }
+    horizontalCardDisplay = ''
+    generateImage()
+    displayHorizontalCard()
+
+    document.querySelector('.js-card-display-section').innerHTML = horizontalCardDisplay
+    generateButton.disabled = false
+  }
 })
