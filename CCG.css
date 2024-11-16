@@ -1,3 +1,68 @@
+body{
+  padding-top: 0;
+}
+
+.opening {
+  background-image: url("CCG images/background3.jpg");
+  height: 500px;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: right;
+  vertical-align: baseline;
+}
+
+.opening-texts {
+  /* position: absolute;
+  top: 50%;
+  bottom: 50%;
+  left: 50%;
+  right: 50%; */
+  text-align: center;
+  vertical-align: middle;
+  align-content: center;
+}
+
+.text1, .text2 {
+  color: whitesmoke;
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.text3 {
+  font-size: larger;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.5rem 0 2rem 0;
+}
+
+.display-section {
+  background-image: url('CCG images/background4.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 430px;
+  width: 850px;
+  margin: 0 15rem 18px 15rem;
+  position: relative;
+  border-radius: 1.5rem;
+  border: solid 2px rgb(255, 80, 11);
+}
+
+/* .flip-card {
+  position: absolute;
+  top: 22%;
+  left: 31%;
+} */
+
+/* .horizontal-card {
+  position: absolute;
+  top: 25%;
+  left: 9%;
+} */
+
 .img1 img,
 .img2 img {
   height: 200px;

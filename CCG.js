@@ -44,26 +44,30 @@ document.querySelector('.phase-3b-btn').addEventListener('click', () => {
 function generateImage() {
 let randomImage = ''
   let randomNumber = Math.random()
-  if (randomNumber >= 0 && randomNumber < 1/6 ) {
+  if (randomNumber >= 0 && randomNumber < 1/8 ) {
     randomImage = cardDesigns[0]
   } else
-  if (randomNumber >= 1/6 && randomNumber < 2/6 ) {
+  if (randomNumber >= 1/8 && randomNumber < 2/8 ) {
     randomImage = cardDesigns[1]
   } else
-  if (randomNumber >= 2/6 && randomNumber < 3/6 ) {
+  if (randomNumber >= 2/8 && randomNumber < 3/8 ) {
     randomImage = cardDesigns[2]
   } else
-  if (randomNumber >= 3/6 && randomNumber < 4/6 ) {
+  if (randomNumber >= 3/8 && randomNumber < 4/8 ) {
     randomImage = cardDesigns[3]
   } else
-  if (randomNumber >= 4/6 && randomNumber < 5/6 ) {
+  if (randomNumber >= 4/8 && randomNumber < 5/8 ) {
     randomImage = cardDesigns[4]
   } else
-  if (randomNumber >= 5/6 && randomNumber < 6/6 ) {
+  if (randomNumber >= 5/8 && randomNumber < 6/8 ) {
     randomImage = cardDesigns[5]
-  } 
-  //else randomImage = 'CCG images/christmas elk.jpeg'
-  //console.log(randomNumber)
+  } else
+  if (randomNumber >= 6/8 && randomNumber < 7/8) {
+    randomImage = cardDesigns[6]
+  } else
+  if (randomNumber >= 7/8 && randomNumber < 8/8) {
+    randomImage = cardDesigns[7]
+  }
   return randomImage
 }
 
@@ -80,6 +84,12 @@ function displayFlipCard() {
   border: 1px solid #f1f1f1;
   perspective: 1000px;
 }
+  
+.flip-card {
+  position: absolute;
+  top: 22%;
+  left: 31%;
+}
 
 .card-container:hover .card-container-inner{
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -93,6 +103,7 @@ function displayFlipCard() {
 }
 
 .card-container-inner{
+  background-color: #f1f1f1;
   position: relative;
   width: 100%;
   height: 100%;
@@ -108,7 +119,7 @@ function displayFlipCard() {
 }
   
 #back-card-p {
-  margin-left: 1.45rem;
+  margin-left: 2rem;
 }
 
 .front-card {
@@ -122,7 +133,6 @@ function displayFlipCard() {
   width: 100%;
   height: 100%;
   border-radius: 2rem;
-    /* Safari */
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
@@ -131,9 +141,9 @@ function displayFlipCard() {
         <div class="card-container-inner">
           <div class="front-card"><img src="${generateImage()}" alt="HO! HO! HO!" class="card-image"></div>
           <div class="back-card">
-            <h4><b>Merry Christmas, ${receiversName}!</b></h4>
-            <p>${message}</p>
-            <p style="margin-bottom: 8px;">Love, ${ownersName}</p>
+            <h4 style="margin-left: 2rem;"><b>Merry Christmas, ${receiversName}!</b></h4>
+            <p id= "back-card-p">${message}</p>
+            <p style="margin-left: 2rem; position: absolute; bottom: 5%">Love, ${ownersName}</p>
           </div>
         </div>
     </div>
@@ -150,6 +160,10 @@ function displayHorizontalCard () {
   border-radius: 2rem;
   height: 250px;
   width: 700px;
+  background-color: rgb(247, 247, 242);
+  position: absolute;
+  top: 25%;
+  left: 9%;
 }
 .card-container2 {
   display: grid;
@@ -161,6 +175,7 @@ function displayHorizontalCard () {
   height: 250px;
   width: 250px;
   border-radius: 2rem 0 0 2rem;
+  border-right: 1px solid black;
 }
   </style>
     <div class="card-container2">
