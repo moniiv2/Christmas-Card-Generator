@@ -6,6 +6,18 @@ document.querySelector('.phase1-btn').addEventListener('click', () => {
   document.querySelector('.js-phase2').classList.remove('phase1')
 })
 
+const inputs = document.querySelectorAll('input')
+inputs.forEach((input, index) => {
+  input.addEventListener('keydown', (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault()
+      const nextInput = inputs[index + 1]
+      if (nextInput) {
+        nextInput.focus()
+      }
+    }
+  })
+})
 
 let ownersName
 let receiversName
@@ -235,4 +247,8 @@ generateButton.addEventListener('click', () => {
     document.querySelector('.js-card-display-section').innerHTML = horizontalCardDisplay
     generateButton.disabled = false
   }
+})
+
+document.querySelector('.refresh-link').addEventListener('click', () => {
+  window.location.href = "The-Christmas-Card-Genetator.html"
 })

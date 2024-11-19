@@ -3,7 +3,7 @@ body{
 }
 
 .opening {
-  background-image: url("CCG images/background3.jpg");
+  background-image: url("CCG images/cookies-5809181_1920.jpg");
   height: 500px;
   position: relative;
   background-size: cover;
@@ -14,14 +14,13 @@ body{
 }
 
 .opening-texts {
-  /* position: absolute;
-  top: 50%;
-  bottom: 50%;
-  left: 50%;
-  right: 50%; */
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  right: 20%;
+  word-wrap: wrap;
   text-align: center;
   vertical-align: middle;
-  align-content: center;
 }
 
 .text1, .text2 {
@@ -31,15 +30,40 @@ body{
   font-style: normal;
 }
 
-.text3 {
+.text1{
+  font-size: 68px;
+}
+.text3, .refresh-link {
   font-size: larger;
   text-align: center;
   vertical-align: middle;
   padding: 0.5rem 0 2rem 0;
+  color: black;
 }
 
+.indicator {
+  font-size: larger;
+  text-align: center;
+  vertical-align: middle;
+  color: black;
+  font-family: "Pacifico", cursive;
+}
+
+.first-section, .second-section {
+  margin: 0;
+}
+
+.first-section{
+  padding-bottom: 1.4rem;
+}
+ .second-section p {
+  color: azure;
+  font-size: 15px;
+  margin-bottom: 3rem;
+ }
+
 .display-section {
-  background-image: url('CCG images/background4.jpg');
+  background-image: url('CCG images/snowflake-1823942_1920.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -48,7 +72,7 @@ body{
   margin: 0 15rem 18px 15rem;
   position: relative;
   border-radius: 1.5rem;
-  border: solid 2px rgb(255, 80, 11);
+  border: solid 2px black;
 }
 
 /* .flip-card {
@@ -85,14 +109,46 @@ body{
   display: none;
 }
 
+.my-name {
+  border-color: rgb(28, 94, 28);
+}
+
+.receivers-name {
+  border-color: bisque;
+}
+
 .message {
   height: 50px;
   width: 200px;
   overflow: scroll;
+  border-color: rgb(151, 30, 30);
 }
-
+.my-name, .receivers-name, .message {
+  border-radius: 1rem;
+  padding: 10px;
+  font-size: 14px;
+}
 button {
   cursor: pointer;
+  font-size: 16px;
+  border: none;
+  font-family: "Pacifico", cursive;
+  color: bisque;
+  background-color: #D6001C;
+  padding: 12px;
+  border-radius: 5px;
+  outline: none;
+  transition: transform 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.prompt-texts {
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 200;
 }
 
 .overlay {
