@@ -1,5 +1,6 @@
 body{
   padding-top: 0;
+  margin: 0;
 }
 
 .opening {
@@ -9,22 +10,20 @@ body{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  text-align: right;
-  vertical-align: baseline;
+  text-align: center;
+  margin: 0;
 }
 
 .opening-texts {
-  position: absolute;
-  top: 30%;
-  left: 20%;
-  right: 20%;
+  padding-top: 8rem;
   word-wrap: wrap;
-  text-align: center;
-  vertical-align: middle;
 }
 
 .text1, .text2 {
   color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   font-family: "Pacifico", cursive;
   font-weight: 400;
   font-style: normal;
@@ -32,6 +31,7 @@ body{
 
 .text1{
   font-size: 68px;
+  margin-bottom: 10px;
 }
 .text3, .refresh-link {
   font-size: larger;
@@ -68,45 +68,38 @@ body{
   background-repeat: no-repeat;
   background-position: center;
   height: 430px;
-  width: 850px;
-  margin: 0 15rem 18px 15rem;
+  width: 85%;
+  margin: 0 auto;
   position: relative;
   border-radius: 1.5rem;
   border: solid 2px black;
 }
 
-/* .flip-card {
-  position: absolute;
-  top: 22%;
-  left: 31%;
-} */
-
-/* .horizontal-card {
-  position: absolute;
-  top: 25%;
-  left: 9%;
-} */
 
 .img1 img,
 .img2 img {
-  height: 200px;
+  height: 180px;
   width: 150px;
   border-radius: 1rem;
 }
 
-.footer-images {
+.footer-section {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 300px;
-  margin-top: 3rem;
-  padding-top: 1rem;
+  padding-top: 3rem;
   text-align: center;
   align-items: center;
-  vertical-align: middle; 
+  vertical-align: middle;
+  background-color: rgb(255, 238, 218);
 }
 
 .phase1 {
   display: none;
+}
+
+.phase2-btn {
+  margin-bottom: 4rem;
 }
 
 .my-name {
@@ -127,6 +120,10 @@ body{
   border-radius: 1rem;
   padding: 10px;
   font-size: 14px;
+}
+
+.ccg-buttons {
+  margin: 0 1.5rem;
 }
 button {
   cursor: pointer;
@@ -169,4 +166,36 @@ button:active {
 .overlay-img {
   max-width: 50%;
   max-height: 50%;
+}
+
+
+@media screen and (min-width: 350px) and (max-width: 600px) {
+  .img1 img,
+  .img2 img {
+    height: 150px;
+    width: 120px;
+    border-radius: 1rem;
+  }
+
+  .display-section {
+    height: 350px;
+  }
+
+  .opening-texts {
+    margin: 0 1rem 2.5rem 2vh;
+  }
+
+  .message {
+    width: 14vh;
+  }
+
+  body, .footer-section {
+    width: fit-content;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  
 }

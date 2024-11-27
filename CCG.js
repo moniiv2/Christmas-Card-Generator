@@ -89,7 +89,7 @@ let horizontalCardDisplay = ''
 function displayFlipCard() {
   flipCardDisplay += `
   <style>
-        .card-container {
+  .card-container {
   box-shadow: 0 9px 11px 0 rgba(0, 0, 0, 0.2);
   transition: 0.8s;
   background-color: transparent;
@@ -98,9 +98,9 @@ function displayFlipCard() {
 }
   
 .flip-card {
-  position: absolute;
-  top: 22%;
-  left: 31%;
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
 }
 
 .card-container:hover .card-container-inner{
@@ -148,6 +148,17 @@ function displayFlipCard() {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
+
+@media screen and (min-width: 350px) and (max-width: 600px) { 
+  .card-container, .card-image {
+    height: 250px;
+    width: 250px;
+  }
+
+  .flip-card {
+    margin-top: 2.4rem;
+  }
+}
       </style>
       <div class="card-container">
         <div class="card-container-inner">
@@ -167,15 +178,15 @@ function displayHorizontalCard () {
   horizontalCardDisplay += `
   <div class="horizontal-card">
     <style>
-      .horizontal-card {
+  .horizontal-card {
   border: solid 1px black;
   border-radius: 2rem;
   height: 250px;
-  width: 700px;
+  width: 70%;
   background-color: rgb(247, 247, 242);
-  position: absolute;
-  top: 25%;
-  left: 9%;
+   margin: 4.5rem auto 0 auto;
+  display: flex;
+  justify-content: center;
 }
 .card-container2 {
   display: grid;
@@ -188,6 +199,36 @@ function displayHorizontalCard () {
   width: 250px;
   border-radius: 2rem 0 0 2rem;
   border-right: 1px solid black;
+}
+
+@media screen and (min-width: 350px) and (max-width: 600px) { 
+  .card-image2 img {
+    height: 150px;
+    width: 120px;
+    border-radius: 2rem 0 0 2rem;
+    border-right: 1px solid black;
+  }
+
+  .horizontal-card {
+    height: 150px;
+    width: 95%;
+  }
+  
+  .card-container2 {
+    column-gap: 6px;
+  }
+
+  p {
+    margin: 3px;
+  }
+
+  h4 {
+    margin: 8px 0 5px 0;
+  }
+
+  p, h4 {
+    font-size: 12px;
+  }
 }
   </style>
     <div class="card-container2">

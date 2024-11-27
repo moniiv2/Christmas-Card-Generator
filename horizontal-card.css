@@ -17,3 +17,10 @@
   border-radius: 2rem 0 0 2rem;
   border-right: 1px solid black;
 }
+
+
+@media screen and (max-width: 750px) {
+  .card-image2 img {
+    width: 35%;
+  }
+}
