@@ -169,7 +169,7 @@ button:active {
 }
 
 
-@media screen and (min-width: 350px) and (max-width: 600px) {
+@media screen and (min-width: 250px) and (max-width: 600px) {
   .img1 img,
   .img2 img {
     height: 150px;
