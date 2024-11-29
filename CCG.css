@@ -183,6 +183,7 @@ button:active {
 
   .opening-texts {
     margin: 0 1rem 2.5rem 2vh;
+    padding-bottom: 3.5rem;
   }
 
   .message {
