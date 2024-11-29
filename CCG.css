@@ -37,7 +37,7 @@ body{
   font-size: larger;
   text-align: center;
   vertical-align: middle;
-  padding: 0.5rem 0 2rem 0;
+  padding: 0.5rem 1.2rem 2rem 1.2rem;
   color: black;
 }
 
@@ -181,11 +181,15 @@ button:active {
     height: 350px;
   }
 
-  .text2 {
-    margin: 0 1rem 2.5rem 2vh;
-    padding-bottom: 3.5rem;
+  .opening-texts {
+    padding-top: 3rem;
   }
 
+  .text2 {
+    text-align: center;
+    padding: 0 1.2rem;
+  }
+  
   .message {
     width: 14vh;
   }
